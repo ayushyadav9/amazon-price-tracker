@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Authroute = require("./routes/auth");
-
+require('dotenv').config()
 
 
 
@@ -9,10 +9,11 @@ const app = express()
 let port =8000
 app.use(express.urlencoded({ extended: true }))
 
-const db = 'mongodb+srv://ayush:admin@cluster0.1i4go.mongodb.net/amazondb?retryWrites=true&w=majority'
+const db = process.env.dburl
 mongoose.connect(db,{ useNewUrlParser: true,useUnifiedTopology: true})
     .then((result) => {
       console.log("Connected to database")
+      // console.log(process.env.dburl)
       app.listen(port, () => console.log(`Server is listening at http://localhost:${port}`))
     })
     .catch((err) => console.log(err))
