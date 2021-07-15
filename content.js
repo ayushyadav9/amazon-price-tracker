@@ -10,8 +10,8 @@ if(pageUrl=='https://www.amazon.in/gp/cart/view.html?ref_=nav_cart'){
             name: cleanedUpValues[0],
             do:"addProduct"
         }
-        console.log(item)
-        // chrome.runtime.sendMessage(item)
+        // console.log(item)
+        chrome.runtime.sendMessage(item)
     }
     
 }

@@ -29,7 +29,12 @@ chrome.runtime.onMessage.addListener((req,senser,res)=>{
     url: url,
     data: tosend,
     type: 'POST',
-    success: (res)=>{console.log(res)},
+    success: (res)=>{
+      if(res.message!='Products added sussesfully'){
+        alert(res.message)
+      }
+      console.log(res.message)
+    },
     error: (err)=>{console.log(err)}
   });
 })

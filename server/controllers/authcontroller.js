@@ -62,7 +62,7 @@ const product=function(req,res,next){
     })
     product.save()
         .then(product=>{
-            res.json({message:'Product added sussesfully'})
+            res.json({message:'Products added sussesfully'})
         })
         .catch(err=>{
             res.json({error:err})
